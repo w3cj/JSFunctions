@@ -129,9 +129,9 @@
 				<section data-markdown>
 					<script type="text/template">
 						### How to define a function
-						<pre style="font-size: 1.5em;">
-<span class="fragment zoom-in highlight-current-red">function</span> <span class="fragment zoom-in highlight-current-green">add</span><span class="fragment zoom-in highlight-current-green">(</span><span class="fragment zoom-in highlight-current-blue">a</span>, <span class="fragment zoom-in highlight-current-blue">b</span><span class="fragment zoom-in highlight-current-green">)</span> <span class="fragment zoom-in highlight-current-green">{</span>
-							<span class="fragment zoom-in highlight-current-red">return</span> <span class="fragment zoom-in highlight-current-blue">a + b</span>;
+						<pre style="font-size: 1.1em;">
+<span class="fragment zoom-in highlight-current-red">function</span> <span class="fragment zoom-in highlight-current-green">sayHello</span><span class="fragment zoom-in highlight-current-green">(</span><span class="fragment zoom-in highlight-current-blue">name</span><span class="fragment zoom-in highlight-current-green">)</span> <span class="fragment zoom-in highlight-current-green">{</span>
+							<span class="fragment zoom-in highlight-current-red">console.log</span>(<span class="fragment zoom-in highlight-current-green">'Hello, '</span><span class="fragment zoom-in highlight-current-red"> + </span><span class="fragment zoom-in highlight-current-blue">name</span>);
 						<span class="fragment zoom-in highlight-current-green">}</span>
 					</pre>
 					</script>
@@ -142,8 +142,8 @@
 				</section>
 
 				<section>
-					<p>Define a function named <i>getTip</i>  that accepts the arguments <i>total</i>  and <i>tipPercent</i></p>
-					<p><span style="color: red">return</span> the specified percentage of the <i>total</i>  rounded to 2 decimal places</p>
+					<p>Define a function named <i>getTipPrintSummary</i>  that accepts the arguments <i>total</i> and <i>tipPercent</i></p>
+					<p>Move ALL of the code into this function.</p>
 				</section>
 
 				<section>
@@ -155,6 +155,24 @@
 					<script type="text/template">
 						### Invoking a Function is like asking a perfect chef to follow your recipe exactly
 						* Following the instructions of the "recipe" exactly, produces a specific predictable result (output) (spaghetti, cake, etc.)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### How to invoke a function
+						<pre style="font-size: 1.2em;"><span class="fragment zoom-in highlight-current-red">sayHello</span><span class="fragment zoom-in highlight-current-blue">(</span><span class="fragment zoom-in highlight-current-green">'CJ'</span><span class="fragment zoom-in highlight-current-blue">)</span>;</pre>
+					</script>
+				</section>
+
+				<section>
+					<h1>EXPERIMENT</h1>
+					<p>Invoke the <i>getTipPrintSummary</i> function multiple times with different values for <i>total</i> and <i>tipPercent</i>.</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Functions can <i>return</i> a value
 						* The return of a function is like the chef "bringing the food to the dinner table"
 							* The return value is returned to the code that invoked the function
 					</script>
@@ -162,11 +180,25 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						### How to invoke a function
-						<pre style="font-size: 1.2em;"><span class="fragment zoom-in highlight-current-green">add</span>(<span class="fragment zoom-in highlight-current-blue">2</span>, <span class="fragment zoom-in highlight-current-blue">3</span>);  // <span class="fragment zoom-in highlight-current-red">5</span>
+						### How to return a value
+						<pre style="font-size: 1.1em;">
+<span class="fragment zoom-in highlight-current-red">function</span> <span class="fragment zoom-in highlight-current-green">add</span><span class="fragment zoom-in highlight-current-green">(</span><span class="fragment zoom-in highlight-current-blue">a</span>, <span class="fragment zoom-in highlight-current-blue">b</span><span class="fragment zoom-in highlight-current-green">)</span> <span class="fragment zoom-in highlight-current-green">{</span>
+							<span class="fragment zoom-in highlight-current-red">return</span> <span class="fragment zoom-in highlight-current-green">a</span><span class="fragment zoom-in highlight-current-red"> + </span><span class="fragment zoom-in highlight-current-blue">b</span>;
+						<span class="fragment zoom-in highlight-current-green">}</span>
+					</pre>
+					</script>
+				</section>
 
-<span class="fragment zoom-in highlight-current-red">var sum</span> = <span class="fragment zoom-in highlight-current-green">add</span>(<span class="fragment zoom-in highlight-current-blue">2</span>, <span class="fragment zoom-in highlight-current-blue">3</span>);  // <span class="fragment zoom-in highlight-current-red">5</span>
-</pre>
+				<section>
+					<p>Define a function named <i>getTip</i>  that accepts the arguments <i>total</i>  and <i>tipPercent</i></p>
+					<p><span style="color: red">return</span> the specified percentage of the <i>total</i>  rounded to 2 decimal places</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### How to <i>store</i>  a return value
+						<pre style="font-size: 1.1em;"><span class="fragment zoom-in highlight-current-red">var sum</span> = <span class="fragment zoom-in highlight-current-green">add</span>(<span class="fragment zoom-in highlight-current-blue">2</span>, <span class="fragment zoom-in highlight-current-blue">3</span>);  // <span class="fragment zoom-in highlight-current-red">5</span>
+						</pre>
 					</script>
 				</section>
 
@@ -177,8 +209,8 @@
 					</section>
 
 					<section>
-						<p>Define a function named <i>roundNumber</i>  that accepts the arguments <i>value</i>  and a number of <i>decimal</i>  places.</p>
-						<p><span style="color: red">return</span> the number rounded to the specifed number of decimal places.</p>
+						<p>Define a function named <i>roundNumber</i>  that accepts the argument <i>value</i></p>
+						<p><span style="color: red">return</span> the number rounded to 2 decimal places.</p>
 					</section>
 
 					<section>
@@ -204,15 +236,7 @@
 					</section>
 
 					<section>
-						<h3>Functions do not HAVE to return a value.</h1>
-						<p>
-							If no return value is specified, JS will automatically return <i>undefined</i>
-						</p>
-						<pre style="font-size: 1.2em;">console.log("Hello, world");</pre>
-					</section>
-
-					<section>
-						<p>Define a function named <i>printTipSummary</i>  that accepts the arguments <i>total</i>, <i>tipPercent</i>, <i>tipTotal</i>, and <i>totalAfterTip</i></p>
+						<p>Define a function named <i>printTipSummary</i>  that accepts the arguments <i>total</i>, <i>tipPercent</i> and <i>tipTotal</i></p>
 						<p>Move the code that prints the summary into this function</p>
 						<p>This function will not return a value</p>
 					</section>
@@ -222,15 +246,18 @@
 					</section>
 
 					<section>
-						<p>Define a function named <i>getTipPrintSummary</i>  that accepts the arguments <i>total</i> and <i>tipPercent</i></p>
-						<p>Move the rest of the code into this function.</p>
-						<p>This function will not return a value</p>
+						<p>Our code is now more maintainable and easier to read.</p>
+					</section>
+
+					<section>
+						<p>We know have some useful functions we can use outside of the context of a tip calculator.</p>
 					</section>
 
 					<section>
 						<h1>EXPERIMENT</h1>
-						<p>Invoke the <i>getTipPrintSummary</i> function multiple times with different values for <i>total</i> and <i>tipPercent</i>.</p>
+						<p>Try invoking formatMoney and roundNumber with various values.</p>
 					</section>
+
 				</section>
 
 				<section data-markdown>
@@ -254,11 +281,6 @@
 					<br>
 					<a href="http://eloquentjavascript.net/03_functions.html">Eloquent JavaScript: Chapter 3</a>
 				</section>
-
-				<section style="text-align: left;">
-					<h1>THANK YOU!</h1>
-				</section>
-
 			</div>
 
 		</div>
@@ -290,7 +312,7 @@
 									]
 								});
 
-								var host = 'http://amacair:3000/';
+								var host = 'http://10.6.65.217:3000/';
 								var socket = io.connect(host);
 								socket.on('slidechanged', function (data) {
 									Reveal.slide(data.indexh, data.indexv, data.indexf);

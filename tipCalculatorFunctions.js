@@ -10,9 +10,6 @@
   Math.round
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 
-  Math.pow
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
-
   toFixed
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 */
@@ -21,9 +18,8 @@ function formatMoney(value) {
   return "$" + value.toFixed(2);
 }
 
-function roundNumber(value, decimal) {
-  var tens = Math.pow(10, decimal);
-  return Math.round(value * tens) / tens;
+function roundNumber(value) {
+  return Math.round(value * 100) / 100;
 }
 
 function getTip(total, tipPercent) {
@@ -31,12 +27,15 @@ function getTip(total, tipPercent) {
   var tipDecimal = tipPercent / 100;
 
   //Calculate tip percent rounded to 2 decimal places
-  var tipTotal = roundNumber(total * tipDecimal, 2);
+  var tipTotal = roundNumber(total * tipDecimal);
 
   return tipTotal;
 }
 
-function printTipSummary(total, tipPercent, tipTotal, totalAfterTip) {
+function printTipSummary(total, tipPercent, tipTotal) {
+    //Calculate the total after tip
+    var totalAfterTip = total + tipTotal;
+
   console.log("Total before tip: " + formatMoney(total));
   console.log(tipPercent + "% Tip: " + formatMoney(tipTotal));
   console.log("Total after " + tipPercent + "% tip: " + formatMoney(totalAfterTip));
@@ -47,10 +46,7 @@ function printTipSummary(total, tipPercent, tipTotal, totalAfterTip) {
 function getTipPrintSummary(total, tipPercent) {
   var tipTotal = getTip(total, tipPercent);
 
-  //Calculate the total after tip
-  var totalAfterTip = total + tipTotal;
-
-  printTipSummary(total, tipPercent, tipTotal, totalAfterTip);
+  printTipSummary(total, tipPercent, tipTotal);
 }
 
 getTipPrintSummary(19.95, 20);
