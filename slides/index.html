@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JavaScript Function Basics</title>
+
+		<meta name="description" content="An introduction to functions in JavaScript">
+		<meta name="author" content="CJ Reynolds">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>JavaScript Function Basics</h3>
+					<p>https://github.com/w3cj/JSFunctions.git</p>
+					<p>
+						<small>By CJ Reynolds</small>
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# About Me
+
+						* Currently a free agent
+							* Spending time with Family and Friends
+
+						* Software Engineer @ ExxonMobil IT
+							* December 2011 - March 2015
+
+						* Louisiana Tech University - November 2011
+							* Computer Science/ Minor Mathematics
+
+						* Musician, Board Gamer, SkateBoarder
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# JavaScript
+
+						# function
+
+						# Basics
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Objectives
+
+						* Articulate the benefits of using functions
+
+						* Articulate the difference between Defining and Invoking functions using analogies
+
+						* Define and Invoke simple functions that take arguments and return a single value
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Overview
+
+						## Tip Calculator
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Benefits of using functions
+
+						* Can be used over and over and over again
+							* Re-use code instead of copy/paste or re-writing it
+
+						* Update code changes in 1 place instead of many
+
+						* Isolate specific code for testing
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Functions
+						* Can be <i>defined</i> and <i>invoked</i>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Defining a Function is like writing a detailed recipe
+						* The list of recipe ingredients (inputs) is like the arguments provided to a function
+							* What is needed to cook this recipe
+						* Recipe instructions are like the function body
+							* Defined in order and in full detail (Bring water to boil, pre-heat oven to 450, etc.)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### How to define a function
+						<pre style="font-size: 1.5em;">
+<span class="fragment zoom-in highlight-current-red">function</span> <span class="fragment zoom-in highlight-current-green">add</span><span class="fragment zoom-in highlight-current-green">(</span><span class="fragment zoom-in highlight-current-blue">a</span>, <span class="fragment zoom-in highlight-current-blue">b</span><span class="fragment zoom-in highlight-current-green">)</span> <span class="fragment zoom-in highlight-current-green">{</span>
+							<span class="fragment zoom-in highlight-current-red">return</span> <span class="fragment zoom-in highlight-current-blue">a + b</span>;
+						<span class="fragment zoom-in highlight-current-green">}</span>
+					</pre>
+					</script>
+				</section>
+
+				<section>
+					<h1>Let's define a function.</h1>
+				</section>
+
+				<section>
+					<p>Define a function named <i>getTip</i>  that accepts the arguments <i>total</i>  and <i>tipPercent</i></p>
+					<p><span style="color: red">return</span> the specified percentage of the <i>total</i>  rounded to 2 decimal places</p>
+				</section>
+
+				<section>
+					<h2>What will happen when we run the code?</h2>
+					<small class="fragment">functions have to be <i>invoked</i> for anything to happen.</small>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Invoking a Function is like asking a perfect chef to follow your recipe exactly
+						* Following the instructions of the "recipe" exactly, produces a specific predictable result (output) (spaghetti, cake, etc.)
+						* The return of a function is like the chef "bringing the food to the dinner table"
+							* The return value is returned to the code that invoked the function
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### How to invoke a function
+						<pre style="font-size: 1.2em;"><span class="fragment zoom-in highlight-current-green">add</span>(<span class="fragment zoom-in highlight-current-blue">2</span>, <span class="fragment zoom-in highlight-current-blue">3</span>);  // <span class="fragment zoom-in highlight-current-red">5</span>
+
+<span class="fragment zoom-in highlight-current-red">var sum</span> = <span class="fragment zoom-in highlight-current-green">add</span>(<span class="fragment zoom-in highlight-current-blue">2</span>, <span class="fragment zoom-in highlight-current-blue">3</span>);  // <span class="fragment zoom-in highlight-current-red">5</span>
+</pre>
+					</script>
+				</section>
+
+				<section>
+					<section>
+						<p>Update the code to invoke the <i>getTip</i> function.</p>
+						<p>Store the return value in the variable <i>tipTotal</i></p>
+					</section>
+
+					<section>
+						<p>Define a function named <i>roundNumber</i>  that accepts the arguments <i>value</i>  and a number of <i>decimal</i>  places.</p>
+						<p><span style="color: red">return</span> the number rounded to the specifed number of decimal places.</p>
+					</section>
+
+					<section>
+						<p>Update the code to invoke the <i>roundNumber</i> function.</p>
+					</section>
+
+					<section>
+						<p>Define a function named <i>formatMoney</i>  that accepts the argument <i>value</i></p>
+						<p><span style="color: red">return</span> the value formatted as a dollar amount with 2 decimal places.</p>
+						<p>
+							Example: 1.5 returns $1.55
+						</p>
+						<p>
+							Example: 19.996 returns $20.00
+						</p>
+						<p>
+							Example: 2 returns $2.00
+						</p>
+					</section>
+
+					<section>
+						<p>Update the code to invoke the <i>formatMoney</i> function.</p>
+					</section>
+
+					<section>
+						<h3>Functions do not HAVE to return a value.</h1>
+						<p>
+							If no return value is specified, JS will automatically return <i>undefined</i>
+						</p>
+						<pre style="font-size: 1.2em;">console.log("Hello, world");</pre>
+					</section>
+
+					<section>
+						<p>Define a function named <i>printTipSummary</i>  that accepts the arguments <i>total</i>, <i>tipPercent</i>, <i>tipTotal</i>, and <i>totalAfterTip</i></p>
+						<p>Move the code that prints the summary into this function</p>
+						<p>This function will not return a value</p>
+					</section>
+
+					<section>
+						<p>Update the code to invoke the <i>printTipSummary</i> function.</p>
+					</section>
+
+					<section>
+						<p>Define a function named <i>getTipPrintSummary</i>  that accepts the arguments <i>total</i> and <i>tipPercent</i></p>
+						<p>Move the rest of the code into this function.</p>
+						<p>This function will not return a value</p>
+					</section>
+
+					<section>
+						<h1>EXPERIMENT</h1>
+						<p>Invoke the <i>getTipPrintSummary</i> function multiple times with different values for <i>total</i> and <i>tipPercent</i>.</p>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# Review
+
+						* Benefits of using functions
+
+						* Difference between Defining and Invoking functions using analogies
+
+						* Define and Invoke simple functions that take arguments and return a single value
+
+					</script>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>Further Reading</h3>
+					<a href="https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics">MDN JavaScript Basics</a>
+					<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">MDN JavaScript Functions</a>
+					<br>
+					<a href="http://eloquentjavascript.net/03_functions.html">Eloquent JavaScript: Chapter 3</a>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THANK YOU!</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/config.js"></script>
+		<script>
+				(function() {
+
+								// Full list of configuration options available at:
+								// https://github.com/hakimel/reveal.js#configuration
+								Reveal.initialize({
+									controls: true,
+									progress: true,
+									history: true,
+									center: true,
+									transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+									// Optional reveal.js plugins
+									dependencies: [
+										{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+										{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+										{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+										{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { [].forEach.call( document.querySelectorAll( '.highlight' ), function( v, i) { hljs.highlightBlock(v); }); } },
+										{ src: 'plugin/zoom-js/zoom.js', async: true },
+										{ src: 'plugin/notes/notes.js', async: true }
+									]
+								});
+
+								var host = 'http://amacair:3000/';
+								var socket = io.connect(host);
+								socket.on('slidechanged', function (data) {
+									Reveal.slide(data.indexh, data.indexv, data.indexf);
+								});
+				})();
+		</script>
+	</body>
+</html>
